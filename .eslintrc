@@ -2,8 +2,9 @@
   "extends": [
     "react-app",
     "react-app/jest",
-    "airbnb-typescript",
+    "airbnb",
     "airbnb/hooks",
+    "airbnb-typescript",
     "prettier"
   ],
   "parserOptions": {
@@ -13,7 +14,10 @@
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": "error",
+    "testing-library/no-debugging-utils": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props":"off",
+    "prettier/prettier": "warn",
     "no-console": "warn",
     "@typescript-eslint/no-unused-vars": "warn"
   }
