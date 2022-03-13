@@ -11,7 +11,8 @@
       "@Providers/*": ["src/providers/*"],
       "@Routes/*": ["src/routes/*"],
       "@Types/*": ["src/types/*"],
-      "@Utils/*": ["src/utils/*"]
+      "@Utils/*": ["src/utils/*"],
+      "@Lib/*": ["src/lib/*"]
     }
   }
 }

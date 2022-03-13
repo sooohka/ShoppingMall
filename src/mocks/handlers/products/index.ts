@@ -10,7 +10,9 @@ type Product = {
   category: string;
 };
 
-const getProducts = rest.get(`${config.api.url}/products`, (req, res, ctx) => res(ctx.json(products), ctx.status(200)));
+const getProducts = rest.get(`${config.api.url}/products`, (req, res, ctx) =>
+  res(ctx.json(products), ctx.status(200))
+);
 
 const getSingleProduct = rest.get(`${config.api.url}/products/:productId`, (req, res, ctx) => {
   const { productId } = req.params;
@@ -25,13 +27,16 @@ const addProduct = rest.post<Product>(`${config.api.url}/products`, (req, res, c
   res(ctx.json({ id: 0, title, price, description, image, category }), ctx.status(201));
 });
 
-const updateProduct = rest.put<Product>(`${config.api.url}/products/:productId`, (req, res, ctx) => {
-  const { productId } = req.params;
-  const { title, price, description, image, category } = req.body;
-  if (Number(productId) > 20) res(ctx.status(404), ctx.body("존재하지 않는 id"));
-  if (!title || !price || !description || !image || !category) res(ctx.status(400));
-  res(ctx.json({ id: productId, title, price, description, image, category }), ctx.status(200));
-});
+const updateProduct = rest.put<Product>(
+  `${config.api.url}/products/:productId`,
+  (req, res, ctx) => {
+    const { productId } = req.params;
+    const { title, price, description, image, category } = req.body;
+    if (Number(productId) > 20) res(ctx.status(404), ctx.body("존재하지 않는 id"));
+    if (!title || !price || !description || !image || !category) res(ctx.status(400));
+    res(ctx.json({ id: productId, title, price, description, image, category }), ctx.status(200));
+  }
+);
 
 const deleteProduct = rest.delete(`${config.api.url}/products/:productId`, (req, res, ctx) => {
   const { productId } = req.params;
