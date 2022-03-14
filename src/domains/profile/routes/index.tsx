@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Routes} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Profile from "@Domains/profile/routes/Profile";
 import Edit from "@Domains/profile/routes/Edit";
 
