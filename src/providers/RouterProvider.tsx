@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BrowserRouter} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 type Props = { children: React.ReactNode };
 
