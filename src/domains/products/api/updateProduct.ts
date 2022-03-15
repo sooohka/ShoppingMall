@@ -4,6 +4,6 @@ import { SimpleProduct } from "@Domains/products/types";
 
 type UpdateProduct = (product: SimpleProduct) => Promise<AxiosResponse<SimpleProduct>>;
 
-const updateProduct: UpdateProduct = (product) => axios.get(`products/${product.id}`);
+const updateProduct: UpdateProduct = (product) => axios.get(`/products/${product.id}`);
 
 export default updateProduct;

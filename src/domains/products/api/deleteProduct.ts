@@ -3,6 +3,6 @@ import { AxiosResponse } from "axios";
 
 type DeleteProduct = (productId: Number) => Promise<AxiosResponse>;
 
-const deleteProduct: DeleteProduct = (productId) => axios.delete(`products/${productId}`);
+const deleteProduct: DeleteProduct = (productId) => axios.delete(`/products/${productId}`);
 
 export default deleteProduct;

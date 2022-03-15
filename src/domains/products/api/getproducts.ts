@@ -1,6 +1,6 @@
 import axios from "@Lib/axios";
-import {AxiosResponse} from "axios";
-import {Product} from "@Domains/products/types";
+import { AxiosResponse } from "axios";
+import { Product } from "@Domains/products/types";
 
 type GetProducts = () => Promise<AxiosResponse<Product[]>>;
 
