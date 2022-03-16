@@ -12,7 +12,9 @@
       "@Routes/*": ["src/routes/*"],
       "@Types/*": ["src/types/*"],
       "@Utils/*": ["src/utils/*"],
-      "@Lib/*": ["src/lib/*"]
+      "@Lib/*": ["src/lib/*"],
+      "@Contexts/*":["src/contexts/*"],
+      "@Misc/*":["src/misc/*"]
     }
   }
 }
