@@ -7,7 +7,7 @@ type Props = {
   children?: ReactNode;
 };
 
-function MiscRoutes({ children }: Props): JSX.Element {
+function MiscRoutes({}: Props): JSX.Element {
   return (
     <Routes>
       <Route path="/" element={<Landing />} />

@@ -1,17 +1,15 @@
+import MiscRoutes from "@Misc/routes";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import ProductsRoutes from "@Domains/products/routes";
-import Profile from "@Domains/profile/routes/Profile";
-import MiscRoutes from "../misc/routes";
+import AppRoutes from "./AppRoutes";
 
-function AppRoutes(): JSX.Element {
+function AllRoutes(): JSX.Element {
   return (
     <Routes>
-      <Route path="products/*" element={<ProductsRoutes />} />
-      <Route path="profile/*" element={<Profile />} />
+      <Route path="app/*" element={<AppRoutes />} />
       <Route path="/*" element={<MiscRoutes />} />
     </Routes>
   );
 }
 
-export default AppRoutes;
+export default AllRoutes;
