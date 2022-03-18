@@ -6,11 +6,21 @@ type Props = {
   product: Product;
 };
 
+const boxSize = {
+  w: ["25rem", null, null, "15rem"],
+  h: ["25rem", null, null, "20rem"],
+};
+
+const imageSize = {
+  w: "100%",
+  h: ["70%", null, null, "50%"],
+};
+
 function SkeletonProductListItem(): JSX.Element {
   return (
-    <WrapItem w="14rem" h="20rem" p="1rem">
-      <Center w="14rem" flexDir="column">
-        <Skeleton w="100%" h="10rem" />
+    <WrapItem {...boxSize} p="1rem">
+      <Center {...boxSize} flexDir="column">
+        <Skeleton {...imageSize} />
         <Box w="100%" display="flex" flexDir="column" mt="1rem">
           <SkeletonText size="" />
         </Box>
@@ -29,12 +39,11 @@ function ProductListItem(props: Props): JSX.Element {
       border="1px solid "
       borderColor="gray.200"
       _hover={{ background: "gray.100", cursor: "pointer" }}
-      w="15rem"
-      h="20rem"
+      {...boxSize}
       p="1rem"
     >
-      <Center w="14rem" flexDir="column">
-        <Image w="100%" h="10rem" src={image} alt="title" />
+      <Center w="100%" h="100%" flexDir="column">
+        <Image {...imageSize} src={image} alt="title" />
         <Box w="100%" display="flex" flexDir="column" mt="1rem">
           <Text fontSize="lg" lineHeight="1.3" noOfLines={2}>
             {title}

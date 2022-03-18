@@ -1,17 +1,19 @@
-import React, { ReactNode, useEffect, useState } from "react";
-import ProductListItem from "@Domains/products/components/ProductListItem";
-import config from "@Config/index";
+import React from "react";
 import ProductList from "@Domains/products/components/ProductList";
+import CategoryTab from "@Domains/categories/components/CategoryTab";
+import { VStack } from "@chakra-ui/react";
+import MainLayout from "@Components/layout/MainLayout";
 
-type Props = {
-  children?: ReactNode;
-};
+type Props = {};
 
 function Products({}: Props): JSX.Element {
   return (
-    <div>
+    // <MainLayout>
+    <VStack w="100%">
+      <CategoryTab />
       <ProductList />
-    </div>
+    </VStack>
+    // </MainLayout>
   );
 }
 

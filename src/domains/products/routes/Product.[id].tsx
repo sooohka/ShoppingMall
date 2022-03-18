@@ -4,7 +4,7 @@ type Props = {
   children?: ReactNode;
 };
 
-function Product({ children }: Props): JSX.Element {
+function Product({}: Props): JSX.Element {
   return <div />;
 }
 
