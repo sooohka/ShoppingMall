@@ -10,18 +10,16 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "plugins": [
-    "prettier"
-  ],
+  "plugins": ["prettier"],
   "rules": {
     "react/jsx-props-no-spreading": "off",
     "import/no-extraneous-dependencies": "off",
     "no-empty-pattern": "off",
-    "react/no-unused-prop-types":"off",
+    "react/no-unused-prop-types": "off",
     "import/prefer-default-export": "off",
     "testing-library/no-debugging-utils": "warn",
     "react/react-in-jsx-scope": "off",
-    "react/require-default-props":"off",
+    "react/require-default-props": "off",
     "prettier/prettier": "warn",
     "no-console": "warn",
     "@typescript-eslint/no-unused-vars": "warn"

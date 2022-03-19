@@ -8,12 +8,10 @@ type Props = {};
 
 function Products({}: Props): JSX.Element {
   return (
-    // <MainLayout>
     <VStack w="100%">
       <CategoryTab />
       <ProductList />
     </VStack>
-    // </MainLayout>
   );
 }
 

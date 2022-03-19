@@ -28,9 +28,10 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "BROWSER=none craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "prettier": "prettier ."
   },
   "eslintConfig": {
     "extends": [

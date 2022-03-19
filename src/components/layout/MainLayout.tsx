@@ -16,7 +16,6 @@ function MainLayout({ children }: Props): JSX.Element {
           <Sidebar headerHeight={headerHeight} sidebarWidth={sidebarWidth} />
           <Box flex={1}>
             <Header headerHeight={headerHeight} />
-            <Box h={headerHeight} w="100%" />
             <Box as="main">{children}</Box>
           </Box>
         </Box>

@@ -1,4 +1,3 @@
-
 {
   "compilerOptions": {
     "baseUrl": "./",
@@ -13,8 +12,8 @@
       "@Types/*": ["src/types/*"],
       "@Utils/*": ["src/utils/*"],
       "@Lib/*": ["src/lib/*"],
-      "@Contexts/*":["src/contexts/*"],
-      "@Misc/*":["src/misc/*"]
+      "@Contexts/*": ["src/contexts/*"],
+      "@Misc/*": ["src/misc/*"]
     }
   }
 }

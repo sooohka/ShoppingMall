@@ -8,35 +8,26 @@ type Props = {
 };
 function Header(props: Props) {
   const { headerHeight } = props;
-  const { onToggle, isOpen, isDesktop } = useContext(SidebarContext);
+  const { onOpen, isOpen, isDesktop } = useContext(SidebarContext);
   return (
     <Box
       as="header"
-      position="fixed"
       h={headerHeight}
       w="100%"
       borderBottom="1px solid gray"
       bgColor="white"
-      // zIndex={100}
+      zIndex="header"
     >
-      <IconButton
-        d={isDesktop ? "none" : "block"}
-        onClick={onToggle}
-        aria-label="close sidebar"
-        fontSize="1.5rem"
-        icon={
-          isOpen ? (
-            <Icon>
-              <HiX />
-            </Icon>
-          ) : (
-            <Icon>
-              <HiMenu />
-            </Icon>
-          )
-        }
-        bg="none"
-      />
+      {!isOpen && (
+        <IconButton
+          d={isDesktop ? "none" : "block"}
+          onClick={onOpen}
+          aria-label="close sidebar"
+          fontSize="1.5rem"
+          icon={<Icon as={HiMenu} />}
+          bg="none"
+        />
+      )}
     </Box>
   );
 }

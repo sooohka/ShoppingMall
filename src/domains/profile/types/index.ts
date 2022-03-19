@@ -1,4 +1,4 @@
-import {BaseEntity} from "@Types/BaseEntity";
+import { BaseEntity } from "@Types/BaseEntity";
 
 type User = {
   email: string;
