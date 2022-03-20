@@ -1,6 +1,6 @@
 import { useDisclosure } from "@chakra-ui/react";
 import useBreakPoints from "@Hooks/layout/useBreakpoints";
-import React, { createContext, ReactNode, useEffect, useLayoutEffect, useMemo } from "react";
+import React, { createContext, ReactNode, useEffect, useMemo } from "react";
 
 type ContextType = {
   isOpen: boolean;
@@ -33,7 +33,7 @@ function SidebarContextProvider(props: Props) {
     }),
     [isDesktop, isOpen, onClose, onOpen, onToggle]
   );
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (isDesktop) onOpen();
     else if (isMobile) onClose();
   }, [isDesktop, isMobile, onClose, onOpen]);

@@ -9,6 +9,20 @@ type Product = {
   title: string;
 } & BaseEntity;
 
+type ProductAddForm = {
+  category: string;
+  description: string;
+  image: string;
+  price: number;
+  rating: { rate: number; count: number };
+  title: string;
+} & BaseEntity;
+
+enum ProductsSearchParams {
+  CATEGORY = "category",
+}
+
 type SimpleProduct = Omit<Product, "rating">;
 
-export type { Product, SimpleProduct };
+export { ProductsSearchParams };
+export type { Product, ProductAddForm, SimpleProduct };

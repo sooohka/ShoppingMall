@@ -38,10 +38,9 @@ function Sidebar(props: Props) {
   const { headerHeight, sidebarWidth } = props;
   const { isDesktop, isOpen, onClose } = useContext(SidebarContext);
 
-  console.log(isOpen);
   if (isDesktop)
     return (
-      <Box>
+      <Box minH="100vh">
         <Box d="flex" w={sidebarWidth} h="100%" flexDir="column" as="aside" zIndex="sidebar">
           <SidebarHeader title={title} headerHeight={headerHeight} />
           <SidebarBody Links={Links} />

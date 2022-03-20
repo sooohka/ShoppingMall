@@ -2,7 +2,7 @@ import React, { ReactNode, useEffect, useState } from "react";
 import { Wrap } from "@chakra-ui/react";
 import ProductListItem from "@Domains/products/components/ProductListItem";
 import { Product } from "@Domains/products/types";
-import getProducts from "@Domains/products/api/getproducts";
+import { getProducts } from "@Domains/products/api/getproducts";
 
 type Props = {
   children?: ReactNode;
@@ -20,7 +20,7 @@ function ProductList({}: Props): JSX.Element {
 
   if (!data) return <div />;
   return (
-    <Wrap minW="60rem" spacing={0} p="2rem">
+    <Wrap spacing={0}>
       {data.map((product) => (
         <ProductListItem key={product.id} product={product} />
       ))}
