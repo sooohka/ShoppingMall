@@ -5,7 +5,7 @@ type Props = {
   children?: ReactNode;
 };
 
-function Landing({ children }: Props): JSX.Element {
+function Landing({}: Props): JSX.Element {
   return (
     <div>
       <h1>Landing Page 입니다.</h1>

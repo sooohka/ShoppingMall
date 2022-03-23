@@ -4,16 +4,27 @@
     "paths": {
       "@Assets/*": ["src/assets/*"],
       "@Components/*": ["src/components/*"],
+      "@Components": ["src/components"],
       "@Config/*": ["src/config/*"],
+      "@Config": ["src/config"],
       "@Domains/*": ["src/domains/*"],
+      "@Domains": ["src/domains"],
       "@Hooks/*": ["src/hooks/*"],
+      "@Hooks": ["src/hooks"],
       "@Providers/*": ["src/providers/*"],
+      "@Providers": ["src/providers"],
       "@Routes/*": ["src/routes/*"],
+      "@Routes": ["src/routes"],
       "@Types/*": ["src/types/*"],
+      "@Types": ["src/types"],
       "@Utils/*": ["src/utils/*"],
+      "@Utils": ["src/utils"],
       "@Lib/*": ["src/lib/*"],
+      "@Lib": ["src/lib"],
       "@Contexts/*": ["src/contexts/*"],
-      "@Misc/*": ["src/misc/*"]
+      "@Contexts": ["src/contexts"],
+      "@Misc/*": ["src/misc/*"],
+      "@Misc": ["src/misc"]
     }
   }
 }

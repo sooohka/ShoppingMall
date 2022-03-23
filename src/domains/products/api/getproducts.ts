@@ -1,12 +1,18 @@
 import axios from "@Lib/axios";
 import { AxiosResponse } from "axios";
-import { Product, ProductsSearchParams } from "@Domains/products/types";
+import { Product } from "@Domains/products/types";
+
+enum ProductsSearchParams {
+  CATEGORY = "category",
+}
+
+type GetProductByCategoryDTO = { body: any; categoryId: Product["category"]["id"] };
 
 type GetProducts = () => Promise<AxiosResponse<Product[]>>;
-type GetProductsByCategory = (category: Product["category"]) => Promise<AxiosResponse<Product[]>>;
+type GetProductsByCategory = (dto: GetProductByCategoryDTO) => Promise<AxiosResponse<Product[]>>;
 
 const getProducts: GetProducts = () => axios.get("/products");
-const getProductsByCategory: GetProductsByCategory = (category) =>
-  axios.get(`/products?${ProductsSearchParams.CATEGORY}=${category}`);
-
-export { getProducts, getProductsByCategory };
+const getProductsByCategory: GetProductsByCategory = (dto) =>
+  axios.get(`/products?${ProductsSearchParams.CATEGORY}=${dto.categoryId}`);
+export type { GetProductByCategoryDTO };
+export { getProducts, getProductsByCategory, ProductsSearchParams };

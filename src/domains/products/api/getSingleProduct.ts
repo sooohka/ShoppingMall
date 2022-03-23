@@ -2,8 +2,13 @@ import axios from "@Lib/axios";
 import { AxiosResponse } from "axios";
 import { Product } from "@Domains/products/types";
 
-type GetSingleProduct = (productId: Number) => Promise<AxiosResponse<Product>>;
+type GetSingleProductDTO = {
+  body: any;
+  productId: Number;
+};
 
-const getSingleProduct: GetSingleProduct = (productId) => axios.get(`/products/${productId}`);
+type GetSingleProduct = (dto: GetSingleProductDTO) => Promise<AxiosResponse<Product>>;
 
+const getSingleProduct: GetSingleProduct = (dto) => axios.get(`/products/${dto.productId}`);
+export type { GetSingleProductDTO };
 export default getSingleProduct;

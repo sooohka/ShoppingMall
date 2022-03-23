@@ -1,13 +1,9 @@
 import React from "react";
-import Routes from "@Routes/index";
+import Routes from "@Routes";
 import AppProvider from "./providers";
 
 function App() {
-  return (
-    <AppProvider>
-      <Routes />
-    </AppProvider>
-  );
+  return <Routes />;
 }
 
 export default App;

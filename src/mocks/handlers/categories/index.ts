@@ -1,5 +1,5 @@
+import config from "@Config";
 import { rest } from "msw";
-import config from "@Config/index";
 import categories from "../../model/categories/categories.json";
 
 const getCategories = rest.get(`${config.api.url}/products/categories`, (req, res, ctx) =>

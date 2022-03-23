@@ -23,15 +23,4 @@ type User = {
   phone: string;
 } & BaseEntity;
 
-type UserAddForm = {
-  email: string;
-  username: string;
-  password: string;
-  name: {
-    firstname: string;
-    lastname: string;
-  };
-  phone: string;
-};
-
-export type { User, UserAddForm };
+export type { User };

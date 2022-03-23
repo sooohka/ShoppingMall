@@ -1,3 +1,4 @@
+import AppProvider from "@Providers";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
@@ -6,7 +7,9 @@ import "./style.css";
 function render() {
   ReactDOM.render(
     <StrictMode>
-      <App />
+      <AppProvider>
+        <App />
+      </AppProvider>
     </StrictMode>,
     document.getElementById("root")
   );

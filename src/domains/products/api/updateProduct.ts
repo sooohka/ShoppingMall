@@ -1,9 +1,14 @@
+import { Product } from "@Domains/products/types";
 import axios from "@Lib/axios";
 import { AxiosResponse } from "axios";
-import { SimpleProduct } from "@Domains/products/types";
 
-type UpdateProduct = (product: SimpleProduct) => Promise<AxiosResponse<SimpleProduct>>;
+type UpdateProductDTO = {
+  body: Omit<Product, "id">;
+  productId: Product["id"];
+};
 
-const updateProduct: UpdateProduct = (product) => axios.get(`/products/${product.id}`);
+type UpdateProduct = (data: UpdateProductDTO) => Promise<AxiosResponse<Product>>;
 
+const updateProduct: UpdateProduct = (dto) => axios.put(`/products/${dto.productId}`, dto.body);
+export type { UpdateProductDTO };
 export default updateProduct;

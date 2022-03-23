@@ -1,16 +1,13 @@
-import React, { ReactElement, ReactNode } from "react";
-import { render, RenderOptions } from "@testing-library/react";
-import QueryClientProvider from "@Providers/QueryClientProvider";
-import RouterProvider from "@Providers/RouterProvider";
 import ChakraProvider from "@Providers/ChakraProvider";
+import RouterProvider from "@Providers/RouterProvider";
+import { render, RenderOptions } from "@testing-library/react";
+import React, { ReactElement, ReactNode } from "react";
 
 type Props = { children: ReactNode };
 function AllTheProviders({ children }: Props): JSX.Element {
   return (
     <ChakraProvider>
-      <QueryClientProvider>
-        <RouterProvider>{children}</RouterProvider>
-      </QueryClientProvider>
+      <RouterProvider>{children}</RouterProvider>
     </ChakraProvider>
   );
 }

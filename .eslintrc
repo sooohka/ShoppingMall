@@ -23,5 +23,6 @@
     "prettier/prettier": "warn",
     "no-console": "warn",
     "@typescript-eslint/no-unused-vars": "warn"
-  }
+  },
+  "ignorePatterns": "craco.config.js"
 }

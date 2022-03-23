@@ -1,8 +1,10 @@
+import { Product } from "@Domains/products/types";
 import axios from "@Lib/axios";
 import { AxiosResponse } from "axios";
 
-type DeleteProduct = (productId: Number) => Promise<AxiosResponse>;
+type DeleteProductDTO = { body: any; productId: Pick<Product, "id"> };
+type DeleteProduct = (dto: DeleteProductDTO) => Promise<AxiosResponse<void>>;
 
-const deleteProduct: DeleteProduct = (productId) => axios.delete(`/products/${productId}`);
-
+const deleteProduct: DeleteProduct = (dto) => axios.delete(`/products/${dto.productId}`);
+export type { DeleteProductDTO };
 export default deleteProduct;

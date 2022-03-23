@@ -1,6 +1,4 @@
-// src/craco.config.js
 const CracoAlias = require("craco-alias");
-
 module.exports = {
   jest: {
     configure: {
@@ -16,6 +14,7 @@ module.exports = {
         "@Types/(.*)": "<rootDir>/src/types/$1",
         "@Utils/(.*)": "<rootDir>/src/utils/$1",
         "@Misc/(.*)": "<rootDir>/src/misc/$1",
+        "@Stores/(.*)": "<rootDir>/src/stores/$1",
         "@Contexts/(.*)": "<rootDir>/src/contexts/$1",
       },
     },

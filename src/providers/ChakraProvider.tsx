@@ -1,5 +1,5 @@
+import { ChakraProvider as CP, extendTheme } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
-import { ChakraProvider as CP, ChakraTheme, extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
   zIndices: {
