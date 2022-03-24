@@ -7,7 +7,7 @@ type Props = {};
 
 function Products({}: Props): JSX.Element {
   return (
-    <VStack w="100%" minW="55rem" p="2rem" gap="1rem" alignItems="flex-start">
+    <VStack w="100%" p="2rem" gap="1rem" alignItems="flex-start">
       <CategoryMenu />
       <ProductList />
     </VStack>

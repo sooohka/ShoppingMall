@@ -5,7 +5,7 @@ import React from "react";
 type Props = {
   selected: boolean;
   category: Category;
-  handleCategoryClick: (category: string) => () => void;
+  handleCategoryClick: (category: Category) => () => void;
 };
 
 function CategoryMenuItem({ category, handleCategoryClick, selected }: Props): JSX.Element {
@@ -16,7 +16,7 @@ function CategoryMenuItem({ category, handleCategoryClick, selected }: Props): J
         onClick={handleCategoryClick(category)}
         _hover={{ cursor: "pointer" }}
       >
-        {category}
+        {category.name}
       </WrapItem>
     );
   return (
@@ -24,7 +24,7 @@ function CategoryMenuItem({ category, handleCategoryClick, selected }: Props): J
       onClick={handleCategoryClick(category)}
       _hover={{ cursor: "pointer", opacity: "0.7" }}
     >
-      {category}
+      {category.name}
     </WrapItem>
   );
 }

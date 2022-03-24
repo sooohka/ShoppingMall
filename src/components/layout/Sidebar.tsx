@@ -1,31 +1,36 @@
 import { Box, Drawer, DrawerContent, DrawerOverlay } from "@chakra-ui/react";
 import SidebarContext from "@Contexts/SidebarContext";
 import React, { useContext } from "react";
-import { HiOutlineHome, HiOutlineShoppingCart, HiOutlineUser, HiShoppingBag } from "react-icons/hi";
+import {
+  HiOutlineHome,
+  HiOutlineShoppingBag,
+  HiOutlineShoppingCart,
+  HiShoppingBag,
+} from "react-icons/hi";
 import SidebarBody from "./Sidebar/components/SidebarBody";
 import SidebarHeader from "./Sidebar/components/SidebarHeader";
 
 const title = {
-  to: "/",
+  to: "/app",
   icon: HiShoppingBag,
   label: "ShoppingMall",
 };
 
 const Links = [
   {
-    to: "/",
+    to: "/app",
     icon: HiOutlineHome,
     label: "Home",
   },
   {
     to: "/app/products",
-    icon: HiOutlineShoppingCart,
-    label: "Shopping",
+    icon: HiOutlineShoppingBag,
+    label: "쇼핑하기",
   },
   {
-    to: "/app/profile",
-    icon: HiOutlineUser,
-    label: "Profile",
+    to: "/app/cart",
+    icon: HiOutlineShoppingCart,
+    label: "장바구니",
   },
 ];
 
@@ -43,7 +48,7 @@ function Sidebar(props: Props) {
       <Box minH="100vh">
         <Box d="flex" w={sidebarWidth} h="100%" flexDir="column" as="aside" zIndex="sidebar">
           <SidebarHeader title={title} headerHeight={headerHeight} />
-          <SidebarBody Links={Links} />
+          <SidebarBody links={Links} />
         </Box>
       </Box>
     );
@@ -53,7 +58,7 @@ function Sidebar(props: Props) {
       <DrawerOverlay />
       <DrawerContent w={sidebarWidth} maxW={sidebarWidth}>
         <SidebarHeader title={title} headerHeight={headerHeight} />
-        <SidebarBody Links={Links} />
+        <SidebarBody links={Links} />
       </DrawerContent>
     </Drawer>
   );

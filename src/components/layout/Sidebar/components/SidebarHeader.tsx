@@ -1,9 +1,9 @@
 import { Box, Icon, Link, Text } from "@chakra-ui/react";
 import React from "react";
 import { Link as RRDLink } from "react-router-dom";
-import * as Type from "../types";
+import { LinkWithIcon } from "@Types/index";
 
-type Props = { headerHeight: string; title: Type.Link };
+type Props = { headerHeight: string; title: LinkWithIcon };
 
 function SidebarHeader(props: Props) {
   const { headerHeight, title } = props;

@@ -1,13 +1,14 @@
 import { Wrap } from "@chakra-ui/react";
 import getCategories from "@Domains/categories/api/getCategories";
-import CategoryTabItem from "@Domains/categories/components/CategoryMenuItem";
+import CategoryMenuItem from "@Domains/categories/components/CategoryMenuItem";
+import { Category } from "@Domains/categories/types";
 import React, { useEffect, useState } from "react";
 
 type Props = {};
 
 function CategoryMenu({}: Props): JSX.Element {
-  const [categories, setCategories] = useState<string[]>(["All"]);
-  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+  const [categories, setCategories] = useState<Category[]>([{ id: 0, name: "All" }]);
+  const [currentCategory, setCurrentCategory] = useState<Category>(categories[0]);
 
   useEffect(() => {
     getCategories().then((res) => {
@@ -15,7 +16,7 @@ function CategoryMenu({}: Props): JSX.Element {
     });
   }, []);
 
-  const handleCategoryClick = (category: string) => () => {
+  const handleCategoryClick = (category: Category) => () => {
     setCurrentCategory(category);
   };
 
@@ -30,11 +31,11 @@ function CategoryMenu({}: Props): JSX.Element {
       borderRadius="md"
     >
       {categories.map((v) => (
-        <CategoryTabItem
+        <CategoryMenuItem
+          key={v.id}
           selected={v === currentCategory}
           handleCategoryClick={handleCategoryClick}
           category={v}
-          key={v}
         />
       ))}
     </Wrap>

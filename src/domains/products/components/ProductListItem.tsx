@@ -7,8 +7,8 @@ type Props = {
 };
 
 const boxSize = {
-  w: ["25rem", null, null, "15rem"],
-  h: ["25rem", null, null, "20rem"],
+  w: ["18rem", null, null, "15rem"],
+  h: ["23rem", null, null, "20rem"],
 };
 
 const imageSize = {
@@ -31,7 +31,7 @@ function SkeletonProductListItem(): JSX.Element {
 
 function ProductListItem(props: Props): JSX.Element {
   const {
-    product: { category, description, id, image, price, rating, title },
+    product: { image, price, rating, title },
   } = props;
   if (false) return <SkeletonProductListItem />;
   return (
