@@ -1,7 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import Carousel from "@Components/Elements/Carousel";
 import React, { useState } from "react";
-import "react-awesome-slider/dist/styles.css";
 
 const src =
   "https://images.unsplash.com/photo-1621609764095-b32bbe35cf3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2864&q=80";

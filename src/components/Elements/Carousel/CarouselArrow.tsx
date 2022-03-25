@@ -1,6 +1,7 @@
 import { Icon } from "@chakra-ui/react";
 import CarouselContext from "@Components/Elements/Carousel/CarouselContext";
-import { MouseEventHandler, useContext } from "react";
+import { CAROUSEL_ACTION } from "@Components/Elements/Carousel/CarouselReducer";
+import { useContext } from "react";
 import { IconType } from "react-icons";
 
 type CarouselArrowProps = {
@@ -15,8 +16,8 @@ function CarouselArrow(props: CarouselArrowProps) {
   const dir = { [orientation]: 0 };
 
   const handleClick = () => {
-    if (orientation === "left") dispatch({ type: "carousel/goPrev" });
-    if (orientation === "right") dispatch({ type: "carousel/goNext" });
+    if (orientation === "left") dispatch(CAROUSEL_ACTION.GO_PREV());
+    if (orientation === "right") dispatch(CAROUSEL_ACTION.GO_NEXT());
   };
 
   return (

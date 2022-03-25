@@ -7,7 +7,18 @@ type Props = {
 };
 function CarouselImage(props: Props) {
   const { src, label } = props;
-  return <Img pos="absolute" top={0} left={0} h="100%" w="100%" src={src} alt={label} />;
+  return (
+    <Img
+      userSelect="none"
+      pos="absolute"
+      top={0}
+      left={0}
+      h="100%"
+      w="100%"
+      src={src}
+      alt={label}
+    />
+  );
 }
 
 export default CarouselImage;

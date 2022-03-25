@@ -49,9 +49,9 @@ const carouselReducer: CarouselReducer = (state, action) => {
   switch (action.type) {
     case "carousel/setMedia": {
       const { media } = action.payload;
-      if (media.length === 0) return { ...state, media };
+      if (media.length === 0) throw new Error("Carousel:no media provided");
 
-      return { current: { ...media[0], idx: 0 }, media };
+      return { current: { ...media[0], idx: 0 }, media: [...media] };
     }
     case "carousel/goNext": {
       const { current, media } = state;

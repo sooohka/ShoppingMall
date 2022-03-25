@@ -3,25 +3,12 @@ import carouselReducer, {
   initialState,
 } from "@Components/Elements/Carousel/CarouselReducer";
 
-const src =
-  "https://images.unsplash.com/photo-1621609764095-b32bbe35cf3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2864&q=80";
-const src2 =
-  "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80";
-const src3 =
-  "https://images.unsplash.com/photo-1488372759477-a7f4aa078cb6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80";
-
-const src4 =
-  "https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=788&q=80";
-
-const src5 =
-  "https://images.unsplash.com/photo-1574169208507-84376144848b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1179&q=80";
-
 const media = [
-  { src, label: "img1" },
-  { src: src2, label: "img2" },
-  { src: src3, label: "img3" },
-  { src: src4, label: "img4" },
-  { src: src5, label: "img5" },
+  { src: "src", label: "img1" },
+  { src: "src2", label: "img2" },
+  { src: "src3", label: "img3" },
+  { src: "src4", label: "img4" },
+  { src: "src5", label: "img5" },
 ];
 
 describe("Carousel Reducer Test", () => {
@@ -29,10 +16,88 @@ describe("Carousel Reducer Test", () => {
     const state = carouselReducer(initialState, CAROUSEL_ACTION.TEST());
     expect(state).toStrictEqual(initialState);
   });
-  describe("set Media", () => {
-    it("expect reducer to have media value in state when setMedia dispatched", () => {
+
+  describe("setMedia action", () => {
+    it("expect reducer to have media value in state", () => {
       const state = carouselReducer(initialState, CAROUSEL_ACTION.SET_MEDIA({ media }));
+      expect(state.media).not.toBe(media);
       expect(state.media).toStrictEqual(media);
+    });
+
+    it("expect reducer to have media value of index 0", () => {
+      const state = carouselReducer(initialState, CAROUSEL_ACTION.SET_MEDIA({ media }));
+      expect(state.current).toStrictEqual({ ...media[0], idx: 0 });
+    });
+
+    it("expect reducer to throw value when media's length is 0", () => {
+      expect(() =>
+        carouselReducer(initialState, CAROUSEL_ACTION.SET_MEDIA({ media: [] }))
+      ).toThrow();
+    });
+  });
+
+  describe("goNext action", () => {
+    it("expect reducer state.current to have next index as value", () => {
+      let state = carouselReducer(initialState, CAROUSEL_ACTION.SET_MEDIA({ media }));
+
+      state = carouselReducer(state, CAROUSEL_ACTION.GO_NEXT());
+
+      expect(state.current).toStrictEqual({ ...media[1], idx: 1 });
+    });
+
+    it("현재 상태의 current[idx] 값이 media의 마지막 인덱스일 경우 current[idx]를 0번째 인덱스로 이동", () => {
+      const state = carouselReducer(
+        { current: { ...media[media.length - 1], idx: media.length - 1 }, media },
+        CAROUSEL_ACTION.GO_NEXT()
+      );
+
+      expect(state.current).toStrictEqual({ ...media[0], idx: 0 });
+    });
+
+    it("expect reducer state to throw when state.current is empty", () => {
+      expect(() => {
+        carouselReducer({ current: null, media }, CAROUSEL_ACTION.GO_NEXT());
+      }).toThrow();
+    });
+  });
+  describe("goPrev action", () => {
+    it("현재 상태의 current[idx] 값이 media의 0번째 인덱스일 경우 current[idx]를 마지막 인덱스로 이동", () => {
+      let state = carouselReducer(initialState, CAROUSEL_ACTION.SET_MEDIA({ media }));
+
+      state = carouselReducer(state, CAROUSEL_ACTION.GO_PREV());
+
+      expect(state.current).toStrictEqual({ ...media[media.length - 1], idx: media.length - 1 });
+    });
+
+    it("expect reducer state.current to have prev index as value", () => {
+      const state = carouselReducer(
+        { current: { ...media[media.length - 1], idx: media.length - 1 }, media },
+        CAROUSEL_ACTION.GO_PREV()
+      );
+
+      expect(state.current).toStrictEqual({ ...media[media.length - 2], idx: media.length - 2 });
+    });
+
+    it("expect reducer state to throw when state.current is empty", () => {
+      expect(() => {
+        carouselReducer({ current: null, media }, CAROUSEL_ACTION.GO_PREV());
+      }).toThrow();
+    });
+  });
+  describe("goSpecific action", () => {
+    it("expect reducer state.current to have media[0]", () => {
+      const state = carouselReducer(
+        { current: { ...media[media.length - 1], idx: media.length - 1 }, media },
+        CAROUSEL_ACTION.GO_SPECIFIC({ idx: 0 })
+      );
+
+      expect(state.current).toStrictEqual({ ...media[0], idx: 0 });
+    });
+
+    it("expect reducer state to throw RangeError when array out of range", () => {
+      expect(() => {
+        carouselReducer({ current: null, media }, CAROUSEL_ACTION.GO_SPECIFIC({ idx: 100 }));
+      }).toThrow(RangeError);
     });
   });
 });
