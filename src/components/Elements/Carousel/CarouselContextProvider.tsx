@@ -17,6 +17,14 @@ function CarouselContextProvider(props: Props) {
   const [state, dispatch] = useReducer(carouselReducer, initialState);
 
   useEffect(() => {
+    const makeInterval = () =>
+      setInterval(() => {
+        dispatch(CAROUSEL_ACTION.GO_NEXT());
+      }, 4000);
+    makeInterval();
+  }, []);
+
+  useEffect(() => {
     dispatch(CAROUSEL_ACTION.SET_MEDIA({ media }));
     if (startIdx) dispatch(CAROUSEL_ACTION.GO_SPECIFIC({ idx: startIdx }));
   }, [media, startIdx]);

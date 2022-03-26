@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import Carousel from "@Components/Elements/Carousel";
 import React, { useState } from "react";
 
@@ -25,8 +25,13 @@ const media = [
 
 function EventList() {
   return (
-    <Box w="100%" h="500px" bg="beige">
-      <Carousel media={media} />
+    <Box>
+      <Text fontSize="5xl" as="h2" align="center">
+        Event
+      </Text>
+      <Box w="100%" h="500px" bg="beige">
+        <Carousel media={media} />
+      </Box>
     </Box>
   );
 }
