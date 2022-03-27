@@ -8,7 +8,6 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 function Carousel() {
   const { state } = useContext(CarouselContext);
-  console.log(state);
 
   return (
     <Box pos="relative" w="100%" maxW="100%" h="100%" maxH="100%">

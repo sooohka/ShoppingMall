@@ -20,7 +20,7 @@ function ProductList({}: Props): JSX.Element {
 
   if (!data) return <div />;
   return (
-    <Wrap spacing={0}>
+    <Wrap spacing={0} minW={["", "50rem"]}>
       {data.map((product) => (
         <ProductListItem key={product.id} product={product} />
       ))}

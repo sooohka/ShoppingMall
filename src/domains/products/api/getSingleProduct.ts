@@ -3,7 +3,7 @@ import { AxiosResponse } from "axios";
 import { Product } from "@Domains/products/types";
 
 type GetSingleProductDTO = {
-  body: any;
+  body?: any;
   productId: Number;
 };
 

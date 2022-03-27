@@ -7,8 +7,8 @@ import {
   HiOutlineShoppingCart,
   HiShoppingBag,
 } from "react-icons/hi";
-import SidebarBody from "./Sidebar/components/SidebarBody";
-import SidebarHeader from "./Sidebar/components/SidebarHeader";
+import SidebarBody from "./components/SidebarBody";
+import SidebarHeader from "./components/SidebarHeader";
 
 const title = {
   to: "/app",

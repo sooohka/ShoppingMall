@@ -21,7 +21,10 @@ function CarouselContextProvider(props: Props) {
       setInterval(() => {
         dispatch(CAROUSEL_ACTION.GO_NEXT());
       }, 4000);
-    makeInterval();
+    const t = makeInterval();
+    return () => {
+      clearInterval(t);
+    };
   }, []);
 
   useEffect(() => {

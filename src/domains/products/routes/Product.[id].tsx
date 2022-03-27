@@ -1,3 +1,4 @@
+import ProductDetail from "@Domains/products/components/ProductDetail";
 import React, { ReactNode } from "react";
 
 type Props = {
@@ -5,7 +6,7 @@ type Props = {
 };
 
 function Product({}: Props): JSX.Element {
-  return <div />;
+  return <ProductDetail />;
 }
 
 export default Product;
