@@ -1,11 +1,12 @@
-import { useMediaQuery, theme } from "@chakra-ui/react";
+import { useMediaQuery } from "@chakra-ui/react";
+import { theme } from "@Providers/ChakraProvider";
 
 const breakPoints = Object.values(theme.breakpoints).map((value) => `(min-width:${value})`);
 
 function useBreakPoints() {
-  const [, sm, md, lg, xl] = useMediaQuery(breakPoints);
+  const [xs, sm, md, lg, xl] = useMediaQuery(breakPoints);
 
-  return { sm, md, lg, xl };
+  return { xs, sm, md, lg, xl };
 }
 
 export default useBreakPoints;

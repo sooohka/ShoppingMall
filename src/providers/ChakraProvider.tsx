@@ -2,6 +2,13 @@ import { ChakraProvider as CP, extendTheme } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 
 const theme = extendTheme({
+  breakpoints: {
+    sm: "36em",
+    md: "48em",
+    lg: "62em",
+    xl: "80em",
+    "2xl": "96em",
+  },
   zIndices: {
     hide: -1,
     auto: "auto",
@@ -20,6 +27,7 @@ const theme = extendTheme({
     tooltip: 1800,
   },
 });
+
 type Props = {
   children: ReactNode;
 };
@@ -27,5 +35,5 @@ type Props = {
 function ChakraProvider({ children }: Props): JSX.Element {
   return <CP theme={theme}>{children}</CP>;
 }
-
+export { theme };
 export default ChakraProvider;

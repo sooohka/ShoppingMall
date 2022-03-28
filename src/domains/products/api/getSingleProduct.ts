@@ -4,7 +4,7 @@ import { Product } from "@Domains/products/types";
 
 type GetSingleProductDTO = {
   body?: any;
-  productId: Number;
+  productId: string | number;
 };
 
 type GetSingleProduct = (dto: GetSingleProductDTO) => Promise<AxiosResponse<Product>>;
