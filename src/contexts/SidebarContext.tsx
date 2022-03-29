@@ -21,7 +21,7 @@ type Props = { children: ReactNode };
 function SidebarContextProvider(props: Props) {
   const { children } = props;
   const { isOpen, onClose, onOpen, onToggle } = useDisclosure();
-  const { sm: isMobile, md: isDesktop } = useBreakPoints();
+  const { xs: isMobile, sm: isDesktop } = useBreakPoints();
 
   const contextValue: ContextType = useMemo(
     () => ({

@@ -1,6 +1,7 @@
 import React from "react";
 import { Product } from "@Domains/products/types";
 import { Box, Center, Image, Skeleton, SkeletonText, Text, WrapItem } from "@chakra-ui/react";
+import * as RRD from "react-router-dom";
 
 type Props = {
   product: Product;
@@ -31,11 +32,16 @@ function SkeletonProductListItem(): JSX.Element {
 
 function ProductListItem(props: Props): JSX.Element {
   const {
-    product: { image, price, rating, title },
+    product: { id, image, price, rating, title },
   } = props;
+  const { pathname } = RRD.useLocation();
+
   if (false) return <SkeletonProductListItem />;
+
   return (
     <WrapItem
+      to={`${pathname}/${id}`}
+      as={RRD.Link}
       border="1px solid "
       borderColor="gray.200"
       _hover={{ background: "gray.100", cursor: "pointer" }}

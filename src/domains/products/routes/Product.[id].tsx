@@ -1,12 +1,12 @@
-import ProductDetail from "@Domains/products/components/ProductDetail";
+import Product from "@Domains/products/components/Product";
 import React, { ReactNode } from "react";
 
 type Props = {
   children?: ReactNode;
 };
 
-function Product({}: Props): JSX.Element {
-  return <ProductDetail />;
+function ProductPage({}: Props): JSX.Element {
+  return <Product />;
 }
 
-export default Product;
+export default ProductPage;
