@@ -18,7 +18,7 @@ function CartTableBodyRow(props: Props) {
     <Tr key={product.id}>
       <Td>
         <HStack gap={10}>
-          <Image width="100px" src={product.image} />
+          <Image height="100px" width="100px" src={product.image} />
           <Box>
             <Text>{product.category.name}</Text>
             <Text maxW="20rem" isTruncated fontWeight="bold">

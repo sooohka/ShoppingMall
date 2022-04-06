@@ -7,22 +7,17 @@ import { IconType } from "react-icons";
 type CarouselArrowProps = {
   icon: IconType;
   orientation: "left" | "right";
+  onClick: (orientation: "left" | "right") => () => void;
 };
 
 function CarouselArrow(props: CarouselArrowProps) {
-  const { dispatch } = useContext(CarouselContext);
-  const { icon, orientation } = props;
+  const { icon, orientation, onClick } = props;
 
   const dir = { [orientation]: 0 };
 
-  const handleClick = () => {
-    if (orientation === "left") dispatch(CAROUSEL_ACTION.GO_PREV());
-    if (orientation === "right") dispatch(CAROUSEL_ACTION.GO_NEXT());
-  };
-
   return (
     <Icon
-      onClick={handleClick}
+      onClick={onClick(orientation)}
       zIndex={1}
       pos="absolute"
       top="50%"

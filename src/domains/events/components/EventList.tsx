@@ -25,7 +25,7 @@ const media = [
 
 function EventList() {
   return (
-    <Box>
+    <Box px="2">
       <Text fontSize="5xl" as="h2" align="center">
         Event
       </Text>

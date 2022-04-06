@@ -11,7 +11,7 @@ const headerHeight = "5rem";
 function MainLayout({ children }: Props): JSX.Element {
   return (
     <SidebarContextProvider>
-      <Box d="flex" w="100%" h="100%">
+      <Box d="flex" w="100%" h="100%" maxH="100vh">
         <Sidebar headerHeight={headerHeight} sidebarWidth={sidebarWidth} />
         <Box flex={1}>
           <Header headerHeight={headerHeight} />

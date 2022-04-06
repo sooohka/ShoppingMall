@@ -14,7 +14,7 @@ function Cart() {
 
   if (!products) return null;
   return (
-    <Box>
+    <Box maxH="90vh" overflow="auto">
       <TableContainer>
         <Table>
           <Thead>
