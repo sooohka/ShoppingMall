@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start": "BROWSER=none craco start",
-    "build": "craco build",
+    "build": "CI='' craco build",
     "test": "craco test",
     "prettier": "prettier ."
   },
