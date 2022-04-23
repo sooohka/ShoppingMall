@@ -12,6 +12,8 @@ function Product() {
   const { productId } = useParams();
 
   useEffect(() => {
+    // TODO: 하나의 프로덕트 가져오는 로직작성
+    // TODO: 로직 훅으로 빼기
     (async function () {
       if (!productId) return;
       const res = await getSingleProduct({ productId });
@@ -19,7 +21,7 @@ function Product() {
     })();
   }, [productId]);
 
-  if (!data) return null;
+  if (!data) return <div>notfound</div>;
   if (md)
     return (
       <VStack px={["4", "", "", "14", "36"]} w="100%" minW={["", "", "50rem"]} py="10">

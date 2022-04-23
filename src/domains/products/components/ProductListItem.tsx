@@ -36,7 +36,6 @@ function ProductListItem(props: Props): JSX.Element {
   } = props;
   const { pathname } = RRD.useLocation();
 
-  if (false) return <SkeletonProductListItem />;
 
   return (
     <WrapItem

@@ -9,7 +9,7 @@ type Props = { title: LinkWithIcon };
 function SidebarHeader(props: Props) {
   const { title } = props;
   return (
-    <Box h={theme.layout.header.height} p="1rem" as="header" bg="gray.900">
+    <Box h={theme.layout.header.height} p="1rem" as="header" bg="gray.900" zIndex="sidebar">
       <Link h="100%" to={title.to} as={RRDLink} d="flex" gap=".5rem" alignItems="center">
         <Icon color="white" boxSize="8" as={title.icon} />
         <Text fontSize="2xl" color="white">

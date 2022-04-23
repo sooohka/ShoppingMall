@@ -2,7 +2,7 @@
 
 ## 배포
 
-[배포](http://sooohka-shoppingmall.s3-website.ap-northeast-2.amazonaws.com/)
+[미완성](http://sooohka-shoppingmall.s3-website.ap-northeast-2.amazonaws.com/)
 
 ## Routes
 

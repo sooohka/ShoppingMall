@@ -11,9 +11,11 @@ function MainLayout({ children }: Props): JSX.Element {
     <SidebarContextProvider>
       <Box d="flex" w="100%" h="100%" maxH="100vh">
         <Sidebar />
-        <Box flex={1}>
+        <Box d="flex" flexDir="column" flex={1}>
           <Header />
-          <Box as="main">{children}</Box>
+          <Box flex={1} as="main" overflow="hidden" h="80vh">
+            {children}
+          </Box>
         </Box>
       </Box>
     </SidebarContextProvider>

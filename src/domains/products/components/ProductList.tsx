@@ -12,6 +12,8 @@ function ProductList({}: Props): JSX.Element {
   const [data, setData] = useState<Product[]>([]);
 
   useEffect(() => {
+    // TODO: 여러개의 프로덕트가져오는 로직 작성
+    // TODO: 로직 훅으로 빼기
     (async function () {
       const res = await getProducts();
       setData(res.data);

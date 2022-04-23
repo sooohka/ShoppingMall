@@ -38,7 +38,7 @@ function Carousel() {
   }, [state]);
 
   return (
-    <Box pos="relative" w="100%" h="100%" maxH="100%">
+    <Box pos="relative" w="100%" height="100%">
       <CarouselArrow onClick={handleClick} icon={HiChevronLeft} orientation="left" />
       <CarouselArrow onClick={handleClick} icon={HiChevronRight} orientation="right" />
       <Box

@@ -4,6 +4,7 @@ import ProfileSummary from "@Domains/profile/components/ProfileSummary";
 import theme from "@Src/styles/theme";
 import React, { useContext } from "react";
 import { HiMenu } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 function Header() {
   const { onOpen, isOpen, isDesktop } = useContext(SidebarContext);

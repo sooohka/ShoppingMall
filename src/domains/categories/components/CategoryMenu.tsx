@@ -11,6 +11,8 @@ function CategoryMenu({}: Props): JSX.Element {
   const [currentCategory, setCurrentCategory] = useState<Category>(categories[0]);
 
   useEffect(() => {
+    // TODO: 카테고리별로 나누는 로직 작성
+    // TODO: 로직 훅으로 빼기
     getCategories().then((res) => {
       setCategories((prev) => prev.concat(res.data));
     });

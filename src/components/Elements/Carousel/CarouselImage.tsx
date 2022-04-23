@@ -11,17 +11,7 @@ function CarouselImage(props: Props) {
   const { src, label } = props;
 
   return (
-    <Image
-      m={0}
-      fallback={<div>loading...</div>}
-      userSelect="none"
-      w="100%"
-      minW="100%"
-      h="100%"
-      objectFit="fill"
-      src={src}
-      alt={label}
-    />
+    <Image m={0} userSelect="none" minW="100%" maxH="100%" objectFit="fill" src={src} alt={label} />
   );
 }
 
