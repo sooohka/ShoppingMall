@@ -3,7 +3,7 @@ module.exports = {
   jest: {
     configure: {
       moduleNameMapper: {
-        // Jest module mapper which will detect our absolute imports.
+        "@Src/(.*)": "<rootDir>/src/$1",
         "@Assets/(.*)": "<rootDir>/src/assets/$1",
         "@Components/(.*)": "<rootDir>/src/components/$1",
         "@Config/(.*)": "<rootDir>/src/config/$1",

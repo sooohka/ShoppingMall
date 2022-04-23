@@ -16,21 +16,27 @@ function CarouselContextProvider(props: Props) {
   const { media, startIdx } = props;
   const [state, dispatch] = useReducer(carouselReducer, initialState);
 
-  // useEffect(() => {
-  //   const makeInterval = () =>
-  //     setInterval(() => {
-  //       dispatch(CAROUSEL_ACTION.GO_NEXT());
-  //     }, 4000);
+  useEffect(() => {
+    // state가 변화하면 Interval초기화
+    if (state.current === null) {
+      return () => {};
+    }
+    const makeInterval = () =>
+      setInterval(() => {
+        dispatch(CAROUSEL_ACTION.GO_NEXT());
+      }, 4000);
 
-  //   const t = makeInterval();
-  //   return () => {
-  //     clearInterval(t);
-  //   };
-  // }, []);
+    const t = makeInterval();
+    return () => {
+      clearInterval(t);
+    };
+  }, [state]);
 
   useEffect(() => {
     dispatch(CAROUSEL_ACTION.SET_MEDIA({ media }));
-    if (startIdx) dispatch(CAROUSEL_ACTION.GO_SPECIFIC({ idx: startIdx }));
+    if (startIdx) {
+      dispatch(CAROUSEL_ACTION.GO_SPECIFIC({ idx: startIdx }));
+    }
   }, [media, startIdx]);
 
   const value = useMemo(() => ({ dispatch, state }), [state]);

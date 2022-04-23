@@ -30,6 +30,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "gen:theme-typings": "chakra-cli tokens src/styles/theme.ts",
+    "postinstall": "npm run gen:theme-typings",
     "start": "BROWSER=none craco start",
     "build": "CI='' craco build",
     "test": "craco test",
@@ -54,6 +56,7 @@
     ]
   },
   "devDependencies": {
+    "@chakra-ui/cli": "^1.9.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "craco-alias": "^3.0.1",

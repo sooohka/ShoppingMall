@@ -1,5 +1,6 @@
 import { Box, Drawer, DrawerContent, DrawerOverlay } from "@chakra-ui/react";
 import SidebarContext from "@Contexts/SidebarContext";
+import theme from "@Src/styles/theme";
 import React, { useContext } from "react";
 import {
   HiOutlineHome,
@@ -34,20 +35,21 @@ const Links = [
   },
 ];
 
-type Props = {
-  headerHeight: string;
-  sidebarWidth: string;
-};
-
-function Sidebar(props: Props) {
-  const { headerHeight, sidebarWidth } = props;
+function Sidebar() {
   const { isDesktop, isOpen, onClose } = useContext(SidebarContext);
 
   if (isDesktop)
     return (
       <Box minH="100vh">
-        <Box d="flex" w={sidebarWidth} h="100%" flexDir="column" as="aside" zIndex="sidebar">
-          <SidebarHeader title={title} headerHeight={headerHeight} />
+        <Box
+          d="flex"
+          w={theme.layout.sidebar}
+          h="100%"
+          flexDir="column"
+          as="aside"
+          zIndex="sidebar"
+        >
+          <SidebarHeader title={title} />
           <SidebarBody links={Links} />
         </Box>
       </Box>
@@ -56,8 +58,8 @@ function Sidebar(props: Props) {
   return (
     <Drawer autoFocus={false} placement="left" isOpen={isOpen} onClose={onClose} size="xs">
       <DrawerOverlay />
-      <DrawerContent w={sidebarWidth} maxW={sidebarWidth}>
-        <SidebarHeader title={title} headerHeight={headerHeight} />
+      <DrawerContent w={theme.layout.sidebar.width} maxW={theme.layout.sidebar.width}>
+        <SidebarHeader title={title} />
         <SidebarBody links={Links} />
       </DrawerContent>
     </Drawer>

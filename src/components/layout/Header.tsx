@@ -1,14 +1,11 @@
 import { Box, Icon, IconButton } from "@chakra-ui/react";
 import SidebarContext from "@Contexts/SidebarContext";
 import ProfileSummary from "@Domains/profile/components/ProfileSummary";
+import theme from "@Src/styles/theme";
 import React, { useContext } from "react";
 import { HiMenu } from "react-icons/hi";
 
-type Props = {
-  headerHeight: string;
-};
-function Header(props: Props) {
-  const { headerHeight } = props;
+function Header() {
   const { onOpen, isOpen, isDesktop } = useContext(SidebarContext);
   return (
     <Box
@@ -17,7 +14,7 @@ function Header(props: Props) {
       d="flex"
       alignItems="center"
       as="header"
-      h={headerHeight}
+      h={theme.layout.header.height}
       maxW="100vw"
       w="100%"
       borderBottom="1px solid gray"

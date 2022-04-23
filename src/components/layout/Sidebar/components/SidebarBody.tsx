@@ -9,7 +9,7 @@ type Props = {
 function SidebarBody(props: Props) {
   const { links } = props;
   return (
-    <Box w="100%" flex={1} as="nav" bg="gray.700" p={2}>
+    <Box zIndex="inherit" w="100%" flex={1} as="nav" bg="gray.700" p={2}>
       <VStack>
         <SidebarLinkList links={links} />
       </VStack>

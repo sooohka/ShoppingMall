@@ -6,11 +6,9 @@ import "./style.css";
 
 function render() {
   ReactDOM.render(
-    <StrictMode>
-      <AppProvider>
-        <App />
-      </AppProvider>
-    </StrictMode>,
+    <AppProvider>
+      <App />
+    </AppProvider>,
     document.getElementById("root")
   );
 }

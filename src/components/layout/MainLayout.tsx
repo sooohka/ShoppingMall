@@ -6,15 +6,13 @@ import Sidebar from "./Sidebar";
 
 type Props = { children: ReactNode };
 
-const sidebarWidth = "15rem";
-const headerHeight = "5rem";
 function MainLayout({ children }: Props): JSX.Element {
   return (
     <SidebarContextProvider>
       <Box d="flex" w="100%" h="100%" maxH="100vh">
-        <Sidebar headerHeight={headerHeight} sidebarWidth={sidebarWidth} />
+        <Sidebar />
         <Box flex={1}>
-          <Header headerHeight={headerHeight} />
+          <Header />
           <Box as="main">{children}</Box>
         </Box>
       </Box>

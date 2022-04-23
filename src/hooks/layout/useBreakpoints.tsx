@@ -1,5 +1,5 @@
 import { useMediaQuery } from "@chakra-ui/react";
-import { theme } from "@Providers/ChakraProvider";
+import theme from "@Src/styles/theme";
 
 const breakPoints = Object.values(theme.breakpoints).map((value) => `(min-width:${value})`);
 
