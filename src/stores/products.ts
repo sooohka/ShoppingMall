@@ -6,7 +6,7 @@ import { selector, selectorFamily } from "recoil";
 const productsState = selector<Product[]>({
   key: "itemsState",
   get: async () => {
-    const a = await new Promise((res) => {
+    await new Promise((res) => {
       setTimeout(() => res(1), 1000);
     });
     const { data } = await getProducts();

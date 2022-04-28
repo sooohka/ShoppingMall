@@ -15,7 +15,7 @@ function ProductList({}: Props) {
   if (products.state === "loading" || products.state === "hasError") {
     return (
       <Wrap spacing={0} minW={["", "50rem"]}>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, i) => (
+        {new Array(10).fill(0).map((_, i) => (
           <SkeletonProductListItem key={i.toFixed(2)} />
         ))}
       </Wrap>

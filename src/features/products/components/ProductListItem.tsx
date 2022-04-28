@@ -13,8 +13,8 @@ const boxSize = {
 };
 
 const imageSize = {
-  w: "100%",
-  h: ["70%", null, null, "50%"],
+  w: "10rem",
+  h: "10rem",
 };
 
 function ProductListItem(props: Props): JSX.Element {
