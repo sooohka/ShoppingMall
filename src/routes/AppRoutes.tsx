@@ -1,8 +1,8 @@
 import MainLayout from "@Components/layout/MainLayout";
-import CartRoutes from "@Domains/cart/routes";
-import EventList from "@Domains/events/components/EventList";
-import ProductsRoutes from "@Domains/products/routes";
-import Profile from "@Domains/profile/routes/Profile";
+import CartRoutes from "@Src/features/cart/routes";
+import EventList from "@Src/features/events/components/EventList";
+import ProductsRoutes from "@Src/features/products/routes";
+import Profile from "@Src/features/profile/routes/Profile";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 

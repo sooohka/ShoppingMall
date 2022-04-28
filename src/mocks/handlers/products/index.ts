@@ -1,9 +1,12 @@
 import { rest } from "msw";
 import config from "@Config";
-import { Product } from "@Domains/products/types";
-import { GetProductByCategoryDTO, ProductsSearchParams } from "@Domains/products/api/getproducts";
-import { AddProductDTO } from "@Domains/products/api/addProduct";
-import { UpdateProductDTO } from "@Domains/products/api/updateProduct";
+import { Product } from "@Src/features/products/types";
+import {
+  GetProductByCategoryDTO,
+  ProductsSearchParams,
+} from "@Src/features/products/api/getproducts";
+import { AddProductDTO } from "@Src/features/products/api/addProduct";
+import { UpdateProductDTO } from "@Src/features/products/api/updateProduct";
 import products from "../../model/products/products.json";
 
 const getProducts = rest.get(`${config.api.url}/products`, (req, res, ctx) => {

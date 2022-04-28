@@ -7,14 +7,6 @@ import { CAROUSEL_ACTION } from "@Src/components/Elements/Carousel/CarouselReduc
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
-function Temp({ label, src }: any) {
-  return (
-    <Box w="25%" maxW="25%" h="100%" maxH="100%" pos="relative">
-      <CarouselImage label={label} src={src} />
-    </Box>
-  );
-}
-
 function Carousel() {
   const { state, dispatch } = useContext(CarouselContext);
   const [currentTransform, setCurrentTransform] = useState("translateX(0%)");

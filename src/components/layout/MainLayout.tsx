@@ -13,7 +13,7 @@ function MainLayout({ children }: Props): JSX.Element {
         <Sidebar />
         <Box d="flex" flexDir="column" flex={1}>
           <Header />
-          <Box flex={1} as="main" overflow="hidden" h="80vh">
+          <Box flex={1} as="main" overflow="auto" h="80vh">
             {children}
           </Box>
         </Box>

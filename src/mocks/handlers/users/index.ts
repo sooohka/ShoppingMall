@@ -1,7 +1,7 @@
 import { rest } from "msw";
 import config from "@Config";
-import { AddUserDTO } from "@Domains/profile/api/addUser";
-import { UpdateUserDTO } from "@Domains/profile/api/updateUser";
+import { AddUserDTO } from "@Src/features/profile/api/addUser";
+import { UpdateUserDTO } from "@Src/features/profile/api/updateUser";
 import users from "../../model/users/users.json";
 
 const getSingleUser = rest.get(`${config.api.url}/users/:userId`, (req, res, ctx) => {

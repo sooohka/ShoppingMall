@@ -1,7 +1,4 @@
 import { Icon } from "@chakra-ui/react";
-import CarouselContext from "@Components/Elements/Carousel/CarouselContext";
-import { CAROUSEL_ACTION } from "@Components/Elements/Carousel/CarouselReducer";
-import { useContext } from "react";
 import { IconType } from "react-icons";
 
 type CarouselArrowProps = {

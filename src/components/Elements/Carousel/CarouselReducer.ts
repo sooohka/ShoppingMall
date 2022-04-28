@@ -43,8 +43,8 @@ const initialState: CarouselState = {
 type CarouselReducer = Reducer<CarouselState, CarouselAction>;
 const carouselReducer: CarouselReducer = (state, action) => {
   if (action.debug) {
-    console.log("prev value:", state);
-    console.log("action:", action);
+    console.debug("prev value:", state);
+    console.debug("action:", action);
   }
   switch (action.type) {
     case "carousel/setMedia": {
